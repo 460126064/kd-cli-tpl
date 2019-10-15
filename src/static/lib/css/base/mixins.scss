@@ -1,0 +1,72 @@
+/*Font-Size*/
+@mixin font-size($start: 12, $end: 30, $scale: 8) {
+  @while $start <= $end {
+    .iv-fs-#{$start} {
+      font-size: 1px * ($start - 2) !important;
+      line-height: 1px * ($start - 2 + $scale) !important;
+    }
+    $start: $start + 2;
+  }
+}
+/*Font-Color*/
+@mixin font-color($start: 25, $end: 85, $scale: 20) {
+  @while $start <= $end {
+    .iv-fc-#{$start} {
+      color: rgba(0, 0, 0, $start * 0.01) !important;
+    }
+    $start: $start + $scale;
+  }
+}
+/*Padding And Margin*/
+@mixin layout-distance($type: padding, $base: 1, $start: 0, $end: 6, $scale: 1) {
+  $t: m;
+  @if $type ==  padding {
+    $t: p;
+  }
+  @while $start <= $end {
+    .iv-#{$t}-#{4 * $start} {
+      #{$type}: #{4 * $base * $start}px !important;
+    }
+    .iv-#{$t}-t-#{4 * $start} {
+      #{$type}-top: #{4 * $base * $start}px !important;
+    }
+    .iv-#{$t}-r-#{4 * $start} {
+      #{$type}-right: #{4 * $base * $start}px !important;
+    }
+    .iv-#{$t}-b-#{4 * $start} {
+      #{$type}-bottom: #{4 * $base * $start}px !important;
+    }
+    .iv-#{$t}-l-#{4 * $start} {
+      #{$type}-left: #{4 * $base * $start}px !important;
+    }
+    $start: $start + $scale;
+  }
+}
+//计算多种状态下form表单与modal类名
+@mixin form-modal($end: 1) {
+  $start: 1;
+  .iv-form-modal-#{$end} {
+    @while $start <= $end {
+      .ivu-col:nth-last-child(#{$start}) {
+        .ivu-form-item {
+          margin-bottom: 0;
+        }
+      }
+      $start: $start + 1
+    }
+  }
+}
+//多行省略
+@mixin text-ellipsis () {
+  $start: 1;
+  $end: 6;
+  @while $start <= $end {
+    .iv-ellipsis-#{start} {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: #{start};
+      overflow: hidden;
+    }
+    $start: $start + 1;
+  }
+}

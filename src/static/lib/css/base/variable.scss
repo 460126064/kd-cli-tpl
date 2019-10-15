@@ -1,0 +1,22 @@
+$iv-main-color: #1890FF !default;
+$iv-main-click-color: #096DD9 !default;
+$iv-main-hover-color: #3ea9ff !default;
+$iv-main-bg-color: #E6F7FF !default;
+$iv-main-border-color: #91D5FF !default;
+$iv-green-color: #52C41A !default;
+$iv-red-color: #F5222D !default;
+$iv-gray-color: #BFBFBF !default;
+$iv-yellow-color: #FAAD14 !default;
+$iv-border-color: rgba(0,0,0,0.15) !default;
+$iv-border-radius: 4px !default;
+$base-scale: 1;
+$fs-scale: 12px;
+$base: 1;
+$base-size: 8px !default;
+//一倍间距
+$one-double: $base-size;
+//二倍间距
+$two-double: 2 *  $base-size;
+//三倍间距
+$three-double: 3 *  $base-size;
+$type: standard;

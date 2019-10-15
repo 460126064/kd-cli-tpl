@@ -1,0 +1,418 @@
+@import './variable.scss';
+@import './mixins.scss';
+@import './layout/large.scss';
+@import './layout/standard.scss';
+@import './layout/small.scss';
+@import './layout/dense.scss';
+//5层布局模型，每一层对应的间距为独立自治，下列顺序为自下而上
+//iv-base-all（底层）
+@import './variables/base.scss';
+//iv-tpl-all （模板层）
+@import './variables/tpl.scss';
+//iv-module-all （模块层）
+@import './variables/module.scss';
+//iv-com-all （组件层）
+@import './variables/com.scss';
+//iv-symbol-all （元件层）
+@import './variables/symbol.scss';
+//Font And Line-Height;
+@include font-size();
+@include font-color();
+//Layout
+.iv-pull-left {
+  float: left !important;
+}
+.iv-pull-right {
+  float: right !important;
+}
+.iv-radius {
+  border-radius: 4px;
+}
+.iv-text-right {
+  text-align: right !important;
+}
+.iv-text-left {
+  text-align: left !important;
+}
+.iv-text-center {
+  text-align: center !important;
+}
+.iv-fw-b {
+  font-weight: bold;
+}
+.iv-pointer {
+  cursor: pointer;
+}
+.iv-pos-r {
+  position: relative;
+}
+.iv-pos-a {
+  position: absolute;
+}
+.iv-border-radius {
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+.ivu-form-item-error-tip {
+  line-height: 22px;
+}
+// 表格表头样式
+.iv-table-head-text-left {
+  thead th {
+    text-align: left !important;
+  }
+}
+.iv-table-head-text-right {
+  thead th {
+    text-align: right !important;
+  }
+}
+//升级iview4样式调整
+.ivu-table-header-resizable {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  bottom: 0;
+  right: -5px;
+  cursor: col-resize;
+  z-index: 1;
+}
+.ivu-table-resize-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  border-right: 1px dashed #e8eaec;
+}
+.ivu-table-header {
+  thead {
+    tr th {
+      position: relative;
+    }
+  }
+}
+// .iv-table-head-text-center {
+//   thead th {
+//     text-align: left !important;
+//   }
+// }
+// 表格搜索行样式
+.iv-drag-table .ivu-table-tbody > .ivu-table-row:first-child > td  {
+  background-color: #f8f8f9;
+}
+.iv-table-search-form {
+  &.input-btn {
+    .ivu-input-wrapper {
+      width: 85%;
+      margin-right: $one-double;
+    }
+    .icon {
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+}
+//表单操作列统一样式
+.iv-operate-item {
+  padding: 0 8px;
+  float: left;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    &:after {
+      display: none;
+    }
+  }
+  &:after {
+    display: inline-block;
+    content: '';
+    background: rgba(0, 0, 0, .09);
+    width: 1px;
+    height: 14px;
+    position: relative;
+    top: 3px;
+    right: -8px;
+  }
+}
+//原型图标
+.iv-button {
+  padding: 0;
+  .iv-button-icon {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 50%;
+    border: 1px solid $iv-border-color;
+  }
+  &:hover {
+    .iv-button-icon {
+      border-color: currentColor !important;
+    }
+  }
+}
+//覆盖iview-input校验错误提示出现位置,放在Form的父盒子上
+.iv-cover-input {
+  position: relative;
+  .ivu-form {
+    .ivu-form-item {
+      .ivu-form-item-content {
+        position: static;
+        .ivu-form-item-error-tip {
+          top: -6px;
+          left: auto;
+          right: 16px;
+        }
+      }
+    }
+  }
+}
+//单选框在FormItem中布局
+.ivu-form-item {
+  .ivu-radio-group {
+    position: relative;
+    top: -7px;
+    left: $three-double;
+  }
+}
+//iview radio样式调整
+.iv-custom-radio-wrapper {
+  overflow: hidden;
+  .iv-custom-radio-content{
+    float: left;
+    margin-left: $two-double;
+  }
+
+}
+//覆盖iview-textarea校验错误提示出现位置,需配合iv-cover-input使用
+.iv-cover-textarea {
+  .ivu-form-item-error-tip{
+    right: 16px !important;
+  }
+}
+.ivu-checkbox-wrapper {
+  margin-right: 0;
+}
+
+//修复折叠面板样式
+.ivu-collapse {
+  .ivu-collapse-item {
+    .ivu-collapse-header {
+      padding-left: 16px !important;
+    }
+  }
+}
+//日期下拉框样式100%-查询条件区域
+.iv-datepicker-full {
+  &.ivu-date-picker {
+    display: block;
+    overflow: hidden;
+  }
+}
+//日期下拉框样式100%-表单区域
+.iv-datepicker-form {
+  &.ivu-date-picker {
+    width: 100%;
+  }
+}
+//数字输入框InputNumber100%
+.iv-inputNumber-form {
+  width: 100%;
+}
+.ivu-modal-body {
+  padding: 0 !important;
+}
+
+//自定义小模态框，修改formItem间距
+.iv-form-col {
+  &:nth-child(Odd) {
+    .ivu-form-item {
+      padding-left: 0 !important;
+    }
+  }
+  &:nth-child(even) {
+    .ivu-form-item {
+      padding-right: 0 !important;
+    }
+  }
+ .ivu-form-item-content {
+    height: 32px;
+  }
+}
+#edui1_bottombar {
+  display: none;
+  & + div {
+    display: none;
+  }
+}
+//覆盖表单最后元素24像素与布局组件包冲突
+.iv-hidden-last {
+  .ivu-row {
+    &:last-child {
+      .ivu-form-item {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+//解决tabs组件和treeList系列组件样式冲突
+.iv-tabs-treelist {
+  .iv-layout-list-wrapper {
+    margin: -36px;
+    margin-bottom: -48px;
+  }
+}
+//解决底部被按钮遮住
+.iv-padding-bottom {
+  padding-bottom: 36px;
+}
+label[for="file"] {
+  cursor:  pointer
+}
+.iv-p-two-double {
+  padding: $two-double;
+}
+.iv-p-three-double {
+  padding: $three-double;
+}
+.iv-m-two-double {
+  margin: $two-double;
+}
+.iv-m-three-double {
+  margin: $three-double;
+}
+.iv-preview-wrapper {
+  padding: 0 $three-double;
+}
+.ivu-table-wrapper {
+  margin: 0 $three-double;
+}
+
+/*
+ * @description 步骤条样式
+ */
+.ivu-steps {
+  background: #fff;
+  padding: 0 $three-double;
+  .ivu-steps-item {
+    margin-bottom: $three-double;
+    .ivu-steps-head {
+      width: 24px !important;
+      height: 24px !important;
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
+    .ivu-steps-main .ivu-steps-title {
+      margin-bottom: 0 !important;
+      font-size: 14px;
+      line-height: 22px;
+      padding: 1px 10px 0 8px;
+    }
+  }
+}
+//步骤条下方操作按钮通用样式（待废弃）
+.iv-step-footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  text-align: right;
+  margin-right: 24px;
+  z-index: 88;
+}
+/*
+ * @description tab组件
+ */
+.ivu-tabs-bar {
+  margin-bottom: 0;
+  .ivu-tabs-nav {
+    .ivu-tabs-tab {
+      padding: $two-double $three-double;
+      margin: 0;
+      font-size: 16px;
+      line-height: 24px;
+      &.ivu-tabs-tab-active {
+        border-bottom: 3px solid #2d8cf0;
+      }
+    }
+  }
+}
+// 解决 input-num 的 placeholder 颜色
+.iv-num-placeholder{
+    ::-webkit-input-placeholder {
+      color:    #aab2bd;
+  }
+    :-moz-placeholder {
+    color:    #aab2bd;
+  }
+    ::-moz-placeholder {
+    color:    #aab2bd;
+  }
+    :-ms-input-placeholder {
+    color:    #aab2bd;
+  }
+}
+// 复写按钮样式，按钮阴影问题解决
+.ivu-btn-ghost:focus {
+  box-shadow: none !important;
+}
+.ivu-btn:focus {
+  box-shadow: none !important;
+}
+/*
+ * 解决input清除图标和Button重叠
+ */
+.ivu-input-clear-m-r {
+  .ivu-input-icon-clear {
+    margin-right: 50px
+  }
+}
+// 翻页器跳页input内文字居中
+.ivu-page-options-elevator input {
+  text-align: center;
+}
+//暂无数据滚动条显现调整
+.ivu-table-tip {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+//全局消息提示
+.ivu-message {
+  top: 80% !important;
+  .ivu-message-notice-content {
+    background: #1890FF;
+  }
+  .ivu-message-custom-content {
+    color: #fff;
+    i {
+      color: #fff !important;
+    }
+  }
+}
+.iv-clearfix {
+  &:after {
+    content: '';
+    display: inline-block;
+    clear: both;
+  }
+}
+//换肤变量控制
+@if $type == small {
+  @include small();
+} @else if ($type == dense) {
+  @include dense();
+} @else if ($type == large) {
+  @include large();
+} @else if ($type == standard) {
+  @include standard();
+}
+@include layout-distance(padding);
+@include text-ellipsis();
+@include form-modal(1);
+@include form-modal(2);
+@include form-modal(3);
+@include layout-distance(margin, $base-scale);

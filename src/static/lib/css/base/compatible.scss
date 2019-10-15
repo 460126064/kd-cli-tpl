@@ -1,0 +1,68 @@
+// IE10兼容
+// Select下拉框
+.ivu-select-dropdown {
+  z-index: 9999\0;
+  .ivu-select-dropdown-list {
+    .ivu-select-item {
+      position: relative\0;
+      z-index: 99999\0;
+    }
+  }
+}
+// IE10 兼容
+.ie10 {
+  body .ivu-select-dropdown{
+    position: absolute !important;
+  }
+  body .ivu-poptip-popper {
+    position: absolute !important;
+    // 提示框靠近屏幕边缘被遮挡问题
+    -ms-transform: translateX(-30px);
+  }
+}
+// IE9兼容问题
+.ivu-table-body {
+  overflow-y: auto\9;
+}
+.ivu-checkbox-checked .ivu-checkbox-inner:after {
+  -ms-transform: rotate(45deg) scale(1);
+  display: block  !important;
+}
+.ivu-table-wrapper {
+  overflow: hidden\9;
+}
+.iv-tree-wrapper {
+  .ivu-tree {
+    height: 100%\9 !important;
+  }
+  .ivu-tree-children {
+    height: 100%\9 !important;
+  }
+}
+
+.ivu-tree-children {
+  padding-top: 8px\9 !important;
+  padding-bottom: 8px\9 !important;
+  overflow: auto\9 !important;
+  > li {
+    margin-top: 0\9 !important;
+    margin-bottom: 0\9 !important;
+  }
+  .ivu-tree-children {
+    overflow: hidden\9 !important;
+  }
+}
+// IE10以上
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  overflow: hidden !important;
+}
+body .ivu-select-dropdown{
+  position: fixed\9 !important;
+}
+body .ivu-poptip-popper {
+  position: fixed\9 !important;
+}
+
+body .ivu-page-options .ivu-select-dropdown{
+  position: absolute\9 !important;
+}

@@ -1,0 +1,42 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "ie": "9"
+        },
+        "useBuiltIns": "usage",
+        "corejs": 3
+      },
+    ],
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-syntax-jsx",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-modules-commonjs",
+    "transform-vue-jsx",
+    ["@babel/plugin-proposal-decorators", {
+      //帮助tc39通过允许使用两种可能的语法进行实验来收集社区的反馈
+      // "decoratorsBeforeExport": true,
+      "legacy": true
+    }],
+    ["@babel/plugin-proposal-class-properties", {
+      "loose": true
+    }],
+    ["@babel/plugin-proposal-pipeline-operator", {
+      "proposal": "minimal"
+    }]
+  ],
+  "env": {
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": ["transform-async-to-generator", "transform-es2015-modules-commonjs"]
+    },
+    "development": {
+      "plugins": ["dynamic-import-node"]
+    }
+  }
+}

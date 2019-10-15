@@ -1,0 +1,85 @@
+$iv-symbol-bg: rgba(0,0,0,.3);
+// 4、8、12、16
+$iv-symbol-p4: 4px;
+$iv-symbol-p8: 8px;
+$iv-symbol-p12: 12px;
+$iv-symbol-p16: 16px;
+$iv-symbol-m4: 4px;
+$iv-symbol-m8: 8px;
+$iv-symbol-m12: 12px;
+$iv-symbol-m16: 16px;
+//例子
+// .iv-symbol-pl4: padding-left: 4px
+// .iv-symbol-ml4: margin-left: 4px
+// .iv-symbol-p12: padding: 12px
+@mixin symbolSpace ($val: 4px, $type: padding, $dir:none) {
+  $d: '';
+  $t: '';
+  $v: '';
+  //方向
+  @if $dir == top {
+    $d: t
+  } @else if $dir == right {
+    $d: r
+  } @else if $dir == bottom {
+    $d: b
+  } @else if $dir == left {
+    $d: l
+  }
+  //类型
+  @if $type == padding {
+    $t: p;
+  } @else if  $type == margin {
+    $t: m;
+  }
+  //值
+  @if $val == 4px {
+    $v: 4;
+  } @else if $val == 8px {
+    $v: 8;
+  } @else if $val == 12px {
+    $v: 12;
+  } @else if $val == 16px {
+    $v: 16;
+  }
+  @if $dir == none {
+    .iv-symbol-#{$t}#{$v} {
+      #{$type}: $val;
+    }
+  } @else {
+    .iv-symbol-#{$t}#{$d}#{$v} {
+      #{$type}-#{$dir}: $val;
+    }
+  }
+}
+@each $i in top, right, bottom, left {
+  $direction: '';
+  @if $i == top {
+    $direction: t
+  } @else if $i == right {
+    $direction: r
+  } @else if $i == bottom {
+    $direction: b
+  } @else if $i == left {
+    $direction: l
+  }
+  .iv-symbol-b#{$direction} {
+    border-#{$i}: 1px solid rgba(0,0,0,.15);
+  }
+  @include symbolSpace(4px, padding, $i);
+  @include symbolSpace(4px, margin, $i);
+  @include symbolSpace(8px, padding, $i);
+  @include symbolSpace(8px, margin, $i);
+  @include symbolSpace(12px, padding, $i);
+  @include symbolSpace(12px, margin, $i);
+  @include symbolSpace(16px, padding, $i);
+  @include symbolSpace(16px, margin, $i);
+}
+@include symbolSpace(4px, padding);
+@include symbolSpace(4px, margin);
+@include symbolSpace(8px, padding);
+@include symbolSpace(8px, margin);
+@include symbolSpace(12px, padding);
+@include symbolSpace(12px, margin);
+@include symbolSpace(16px, padding);
+@include symbolSpace(16px, margin);

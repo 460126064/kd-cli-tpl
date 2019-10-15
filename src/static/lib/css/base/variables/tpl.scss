@@ -1,0 +1,41 @@
+//container
+$iv-container-full: -8px;
+$iv-container: 8px;
+//layout
+$iv-layout: 8px;
+.iv-tpl-container-full {
+  margin: $iv-container-full;
+}
+.iv-tpl-container-n {
+  margin: 0;
+}
+.iv-tpl-container {
+  margin: $iv-container;
+}
+//row
+.iv-tpl-row {
+  overflow: hidden;
+}
+//col
+@each $i in 2,3,4,6,8,12,16,18,20,24 {
+  .iv-tpl-col-#{$i} {
+    float: left;
+    width: #{$i / 24 * 100%};
+  }
+}
+//layout
+.iv-tpl-layout {
+  padding: $iv-layout;
+}
+.iv-tpl-layout-n {
+  padding: 0;
+}
+//fill
+.iv-tpl-fill {
+  background: #fff;
+}
+@each $i in top, right, bottom, left {
+  .iv-tpl-fill-#{$i} {
+    border-#{$i}: 1px solid rgba(0,0,0,.15);
+  }
+}

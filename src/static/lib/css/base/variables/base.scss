@@ -1,0 +1,31 @@
+$iv-container-full: -8px;
+//layout
+$iv-layout: 0;
+.iv-base-container-full {
+  margin: $iv-container-full;
+}
+.iv-base-container-n {
+  margin: 0;
+}
+//row
+.iv-base-row {
+  overflow: hidden;
+}
+//col
+@each $i in 2,3,4,6,8,12,16,18,20,24 {
+  .iv-tpl-col-#{$i} {
+    float: left;
+    width: #{$i / 24 * 100%};
+  }
+}
+//layout
+.iv-base-layout {
+  padding: $iv-layout;
+}
+.iv-base-layout-n {
+  padding: 0;
+}
+//fill
+.iv-base-fill {
+  background: #fff;
+}

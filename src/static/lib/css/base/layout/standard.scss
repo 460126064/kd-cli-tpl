@@ -1,0 +1,76 @@
+@import '../variable.scss';
+@mixin standard () {
+  //标准
+  .ivu-select-multiple .ivu-select-input {
+    height: auto !important;
+    line-height: 32px !important;
+  }
+  .ivu-table td {
+    height: 48px !important;
+  }
+  //table组件padding
+  .ivu-table-cell {
+    padding: 0 8px !important;
+  }
+  .ivu-form-item  {
+    margin-bottom: 8px !important;
+  }
+  .ivu-input, .ivu-input-number-input, .ivu-input-number-input-wrap, .ivu-input-number {
+    height: 32px !important;
+    line-height: 1.5 !important;
+  }
+  .ivu-input-icon {
+    height: 32px !important;
+    line-height: 30px !important;
+  }
+  textarea.ivu-input {
+    height: auto !important;
+    min-height: 32px !important;
+  }
+  .ivu-form-item-content {
+    line-height: 32px !important;
+  }
+  .ivu-form-item-label {
+    margin-bottom: 8px;
+  }
+  .ivu-btn {
+    padding: 4px 16px !important;
+  }
+  .iv-custom-btn {
+    height: 32px;
+    padding: 5px 16px;
+    border-radius: 4px;
+    background: $iv-main-color;
+  }
+  #iv-course-Upload .iv-custom-btn {
+    padding: 0;
+  }
+  .ivu-select-selection .ivu-select-placeholder, .ivu-page-next, .ivu-page-prev, .ivu-page-item, .ivu-select-single .ivu-select-selection, .ivu-select-selection .ivu-select-selected-value, .ivu-page-options-elevator input {
+    height: 32px !important;
+    line-height: 32px !important;
+  }
+
+  .iv-operation-list {
+    height: 32px !important;
+    .iv-operation-dropdown {
+      .ivu-dropdown-rel {
+        height: 32px !important;
+        padding: 0 16px !important;
+         .iv-button {
+          top: 3px !important;
+        }
+      }
+    }
+  }
+  .ivu-menu-vertical .ivu-menu-submenu-title {
+    padding: 14px 24px !important;
+  }
+  .iv-page-wrapper .iv-page-jump {
+    padding: 4px !important;
+    top: 0px;
+  }
+  //12字号调整
+  .ivu-menu-item, .ivu-input, .ivu-select-placeholder, .ivu-select-input, .ivu-select-item, .ivu-select-selected-value, .ivu-menu-item, .ivu-checkbox-wrapper, .ivu-tree ul, .ivu-modal-body, .ivu-table, .ivu-switch-inner, .ivu-btn, .ivu-form .ivu-form-item-label, .ivu-card, body, .ivu-radio-wrapper {
+    font-size: $fs-scale !important;
+  }
+}

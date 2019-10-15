@@ -1,0 +1,90 @@
+@import './variable.scss';
+// 主色调
+.iv-main-color {
+  color: $iv-main-color !important;
+}
+.iv-main-bg-color {
+  background-color: $iv-main-color !important;
+}
+.iv-main-border-color {
+  border-color: $iv-main-color !important;
+}
+//点击主色调
+.iv-click-color {
+  color: $iv-main-click-color !important;
+}
+.iv-click-bg-color {
+  background-color: $iv-main-click-color !important;
+}
+.iv-click-border-color {
+  border-color: $iv-main-click-color !important;
+}
+//hover主色调 颜色值为5
+.iv-hover-color {
+  &:hover {
+    color: $iv-main-hover-color !important;
+  }
+}
+.iv-hover-bg-color {
+  &:hover {
+    background-color: $iv-main-hover-color !important;
+  }
+}
+.iv-hover-border-color {
+  &:hover {
+    border-color: $iv-main-hover-color !important;
+  }
+}
+.iv-green-bg {
+  background: $iv-green-color !important;
+}
+.iv-red-bg {
+  background: $iv-red-color !important;
+}
+.iv-gray-bg {
+  background: $iv-gray-color !important;
+}
+//黄色背景
+.iv-yellow-bg {
+  background: $iv-yellow-color !important;
+}
+//黄色字体颜色
+.iv-yellow-color {
+  color: $iv-yellow-color !important;
+}
+.iv-red-color {
+  color: $iv-red-color !important;
+}
+.iv-border-color {
+  border-color: $iv-border-color !important;
+}
+
+//覆盖iview样式
+a {
+  text-decoration: none !important;
+}
+a:hover {
+  color: $iv-main-hover-color !important;
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active:hover {
+  background: $iv-main-color !important;
+}
+//按钮
+.ivu-btn-primary {
+  background: $iv-main-color !important;
+  border-color: $iv-main-color !important;
+}
+.ivu-btn-primary:hover {
+  background: $iv-main-hover-color !important;
+  border-color: $iv-main-hover-color !important;
+}
+//单选框
+.ivu-checkbox-checked .ivu-checkbox-inner {
+  background: $iv-main-hover-color !important;
+  border-color: $iv-main-hover-color !important;
+}
+//警告提示
+.ivu-alert-info {
+  background: $iv-main-bg-color !important;
+  border-color: $iv-main-border-color !important;
+}

@@ -1,0 +1,63 @@
+@import '../variable.scss';
+@mixin dense () {
+  //紧凑
+  .ivu-select-multiple .ivu-select-input {
+    height: auto !important;
+    line-height: 24px !important;
+  }
+  .ivu-table td {
+    height: 40px !important;
+  }
+  //table组件padding
+  .ivu-table-cell {
+    padding: 0 8px !important;
+  }
+  .ivu-form-item  {
+    margin-bottom: 8px !important;
+  }
+  .ivu-input, .ivu-input-number-input, .ivu-input-number-input-wrap, .ivu-input-number, .ivu-input-icon {
+    height: 24px !important;
+    line-height: 1.5 !important;
+  }
+  textarea.ivu-input {
+    height: auto !important;
+    min-height: 24px !important;
+  }
+  .ivu-form-item-content {
+    line-height: 24px !important;
+    padding: 4px 0;
+  }
+  .ivu-form-item-label {
+    margin-bottom: 8px;
+  }
+  .iv-cover-input .ivu-form .ivu-form-item .ivu-form-item-content .ivu-form-item-error-tip {
+    top: 0;
+  }
+  .ivu-btn {
+    padding: 0px 7px !important;
+  }
+  .iv-custom-btn {
+    height: 24px;
+    padding: 1px 7px;
+    border-radius: 4px;
+    background: $iv-main-color;
+  }
+  .ivu-select-selection .ivu-select-placeholder, .ivu-select-selection .ivu-select-input, .ivu-page-next, .ivu-page-prev, .ivu-page-item, .ivu-select-single .ivu-select-selection, .ivu-select-selection .ivu-select-selected-value, .ivu-page-options-elevator input {
+    height: 24px !important;
+    line-height: 24px !important;
+  }
+  .iv-operation-list {
+    height: 24px !important;
+  }
+  .ivu-menu-vertical .ivu-menu-submenu-title {
+    padding: 9px 24px !important;
+  }
+  .iv-page-wrapper .iv-page-jump {
+    padding: 4px !important;
+    top: 0px;
+  }
+  //12字号调整
+  .ivu-menu-item, .ivu-menu-item, .ivu-checkbox-wrapper, .ivu-tree ul, .ivu-modal-body, .ivu-table, .ivu-switch-inner, .ivu-btn, .ivu-form .ivu-form-item-label, .ivu-card, body, .ivu-radio-wrapper {
+    font-size: $fs-scale !important;
+  }
+}

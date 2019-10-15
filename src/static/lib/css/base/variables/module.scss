@@ -1,0 +1,35 @@
+//container
+$iv-container: 8px;
+$iv-container-tb: 8px;
+//layout
+$iv-layout: 8px;
+$iv-layout-tb: 8px;
+
+.iv-module-container {
+  padding: $iv-container;
+}
+.iv-module-container-tb {
+  padding: ($iv-container-tb / 2) $iv-container;
+}
+//row
+.iv-module-row {
+  overflow: hidden;
+}
+//col
+@each $i in 2,3,4,6,8,12,16,18,20,24 {
+  .iv-module-col-#{$i} {
+    float: left;
+    width: #{$i / 24 * 100%};
+  }
+}
+//layout
+.iv-module-layout {
+  padding: $iv-layout;
+}
+.iv-module-layout-tb {
+  padding: ($iv-layout-tb + $iv-layout-tb / 2) $iv-layout;
+}
+//fill
+.iv-module-fill {
+  background: #fff;
+}

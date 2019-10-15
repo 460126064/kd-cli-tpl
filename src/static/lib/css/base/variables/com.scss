@@ -1,0 +1,48 @@
+@import '../variable';
+
+//container
+$iv-container-full: -8px;
+$iv-container-full-lr: -12px;
+//layout
+$iv-layout: 8px;
+$iv-layout-lr: 12px;
+.iv-com-container-full {
+  padding: $iv-container-full;
+}
+.iv-com-container-full-lr {
+  margin: $iv-container $iv-container-full-lr;
+}
+.iv-com-container-full {
+  margin: $iv-container-full;
+}
+//row
+.iv-com-row {
+  overflow: hidden;
+}
+//col
+@each $i in 2,3,4,6,8,12,16,18,20,24 {
+  .iv-com-col-#{$i} {
+    float: left;
+    width: #{$i / 24 * 100%};
+  }
+}
+//layout
+.iv-com-layout {
+  padding: $iv-layout;
+}
+.iv-com-layout-lr {
+  padding: $iv-layout $iv-layout-lr;
+}
+//fill
+.iv-com-fill {
+  background: #fff;
+}
+@each $i in top, right, bottom, left {
+  .iv-com-fill-#{$i} {
+    border-#{$i}: 1px solid rgba(0,0,0,.15);
+  }
+}
+.iv-com-fill-bd {
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: $iv-border-radius;
+}
