@@ -164,6 +164,7 @@ export default {
       this.$refs.formInline.validate((validate) => {
         if (!validate) return
         if (!power) {
+          localStorage.token = 'NaN'
           this.$router.push({
             name: indexRouter
           })
