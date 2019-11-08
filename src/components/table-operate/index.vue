@@ -37,6 +37,16 @@
       <li
         v-if="hasChild"
         class="iv-operate-item iv-pull-left iv-operate-item-slot"><slot name="operate"></slot></li>
+      <template v-if="list.length">
+        <li
+          class="iv-operate-item iv-pull-left"
+          :key="index"
+          v-for="(item, index) in list">
+          <a
+            class="iv-main-color iv-main-hover-color uit-edit-list"
+            @click="operateHandler(item)">{{item.title}}</a>
+        </li>
+      </template>
     </ul>
   </div>
 </template>
@@ -74,6 +84,12 @@ export default {
     compatible: {
       type: Boolean,
       default: true
+    },
+    list: {
+      type: Array,
+      default () {
+        return []
+      }
     },
     deleteTitle: {
       type: String,
@@ -135,6 +151,11 @@ export default {
         return () => {
           return true
         }
+      }
+    },
+    operateHandler: {
+      default () {
+        return () => {}
       }
     }
   },

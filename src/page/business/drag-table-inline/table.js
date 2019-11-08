@@ -158,6 +158,7 @@ export const columnsTable = function (columnsData) {
                 prepend: item.prepend,
                 textRender: item.textRender,
                 handler: item.handler,
+                list: item.list,
                 isOutside: false,
                 //向下兼容，忽略此属性
                 compatible: this.compatible,

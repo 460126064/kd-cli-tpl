@@ -135,6 +135,7 @@ export default {
   },
   mounted () {
     this.checkFixSearchRow() && this.fixSearchRowCheckbox()
+    this.$attrs.immediate && this.forceRender()
   },
   updated () {
     this.checkFixSearchRow() && this.fixSearchRowCheckbox()
@@ -225,6 +226,7 @@ export default {
     },
     setColumns (columns) {
       this.privateColumns = columns
+      this.columnsTable = columnsTable.apply(this, [this.privateColumns || this.columns])
     },
     setParams (params) {
       this.params = params
