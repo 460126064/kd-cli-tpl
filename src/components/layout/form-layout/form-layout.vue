@@ -5,14 +5,14 @@ export default {
     vNode: {
       type: Object,
       default () {
-        return {}
+        return null
       }
     }
   },
   render (h, ctx) {
     return (
       <div class="iv-formlayout-wrapper iv-cover-input">
-        {ctx.props.vNode}
+        {ctx.props.vNode || ctx?.slots()?.default}
       </div>
     )
   }
@@ -22,8 +22,11 @@ export default {
 @import '@/static/lib/css/base/variables/symbol.scss';
 .iv-formlayout-wrapper {
   margin: (-$iv-symbol-m8) (-$iv-symbol-m12);
-  /deep/ .ivu-form-item {
+  .ivu-form-item {
     margin: $iv-symbol-m8 $iv-symbol-m12;
+  }
+  .ivu-form-item-label {
+    padding: 0 !important;
   }
 }
 </style>
